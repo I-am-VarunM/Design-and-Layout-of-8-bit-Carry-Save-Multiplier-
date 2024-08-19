@@ -1,0 +1,42 @@
+*** SPICE deck for cell CarryoutFA{sch} from library CarryoutFA
+*** Created on Fri Sep 22, 2023 14:25:54
+*** Last revised on Sat Sep 23, 2023 14:40:28
+*** Written on Sat Sep 23, 2023 14:42:56 by Electric VLSI Design System, version 9.07
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+
+.global gnd vdd
+
+*** TOP LEVEL CELL: CarryoutFA:CarryoutFA{sch}
+Mnmos@0 Co Ci net@193 gnd nmos L=0.022U W=0.088U
+Mnmos@1 Co Ci net@193 gnd nmos L=0.022U W=0.088U
+Mnmos@2 Co Ci net@193 gnd nmos L=0.022U W=0.088U
+Mnmos@5 net@193 A gnd gnd nmos L=0.022U W=0.088U
+Mnmos@6 net@193 A gnd gnd nmos L=0.022U W=0.088U
+Mnmos@7 net@193 A gnd gnd nmos L=0.022U W=0.088U
+Mnmos@8 net@193 B gnd gnd nmos L=0.022U W=0.088U
+Mnmos@9 net@193 B gnd gnd nmos L=0.022U W=0.088U
+Mnmos@10 net@193 B gnd gnd nmos L=0.022U W=0.088U
+Mnmos@13 net@359 A Co gnd nmos L=0.022U W=0.088U
+Mnmos@17 gnd B net@359 gnd nmos L=0.022U W=0.088U
+Mpmos@9 vdd B net@69 vdd pmos L=0.022U W=0.176U
+Mpmos@10 vdd B net@69 vdd pmos L=0.022U W=0.176U
+Mpmos@11 vdd B net@69 vdd pmos L=0.022U W=0.176U
+Mpmos@15 net@69 Ci Co vdd pmos L=0.022U W=0.176U
+Mpmos@16 net@69 Ci Co vdd pmos L=0.022U W=0.176U
+Mpmos@19 vdd A net@69 vdd pmos L=0.022U W=0.176U
+Mpmos@27 net@69 Ci Co vdd pmos L=0.022U W=0.176U
+Mpmos@33 vdd A net@69 vdd pmos L=0.022U W=0.176U
+Mpmos@34 vdd A net@69 vdd pmos L=0.022U W=0.176U
+Mpmos@41 net@349 B vdd vdd pmos L=0.022U W=0.176U
+Mpmos@45 Co A net@349 vdd pmos L=0.022U W=0.176U
+
+* Spice Code nodes in cell cell 'CarryoutFA:CarryoutFA{sch}'
+.include "C:\varun\DIC\22nm_HP.pm"
+.param vdd = 0.8 
+v1 vdd gnd DC {vdd} 
+v2 A gnd PWL(0 0 400p 0 500p {vdd} 900p {vdd} 1n 0 1.4n 0 1.5n {vdd} 1.9n {vdd} 2n 0 2.4n 0 2.5n {vdd} 2.9n {vdd} 3n 0 3.4n 0 3.5n {vdd} 3.9n {vdd} 4n 0 4.4n 0 4.5n {vdd} 4.9n {vdd} 5n 0 5.4n 0 5.5n {vdd} 5.9n {vdd} 6n 0 7n 0) 
+v3 B gnd PWL(0 0 900p 0 1n {vdd} 1.9n {vdd} 2n 0 2.9n 0 3n {vdd} 3.9n {vdd} 4n 0 4.8n 0 4.9n {vdd} 5.3n {vdd} 5.9n{vdd} 6n 0 6.3n 0 6.4n {vdd} 6.8n{vdd} 7n 0)
+v4 Ci gnd PWL(0 0 2n 0 2.3n {vdd} 3.9n {vdd} 4.2n 0 6n 0 6.2n {vdd} 6.7n{vdd} 6.8n 0 7n 0)
+.tran 0 7n
+.END

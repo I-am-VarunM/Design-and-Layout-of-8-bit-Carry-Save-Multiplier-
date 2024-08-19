@@ -1,0 +1,30 @@
+*** SPICE deck for cell c1{sch} from library carryoutadder1
+*** Created on Thu Sep 28, 2023 19:23:33
+*** Last revised on Thu Sep 28, 2023 20:38:18
+*** Written on Thu Sep 28, 2023 20:38:29 by Electric VLSI Design System, version 9.07
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+
+.global gnd vdd
+
+*** TOP LEVEL CELL: c1{sch}
+Mnmos@0 Co Ci net@15 gnd nmos L=0.022U W=0.088U
+Mnmos@1 net@15 A gnd gnd nmos L=0.022U W=0.088U
+Mnmos@2 net@15 B gnd gnd nmos L=0.022U W=0.088U
+Mnmos@3 Co A net@32 gnd nmos L=0.022U W=0.088U
+Mnmos@4 net@32 B gnd gnd nmos L=0.022U W=0.088U
+Mpmos@0 vdd A net@2 vdd pmos L=0.022U W=0.176U
+Mpmos@1 vdd B net@2 vdd pmos L=0.022U W=0.176U
+Mpmos@2 net@2 Ci Co vdd pmos L=0.022U W=0.176U
+Mpmos@3 vdd B net@7 vdd pmos L=0.022U W=0.176U
+Mpmos@4 net@7 A Co vdd pmos L=0.022U W=0.176U
+
+* Spice Code nodes in cell cell 'c1{sch}'
+.include "C:\varun\DIC\22nm_HP.pm"
+.param vdd = 0.8
+v1 vdd gnd DC {vdd}
+v2 A gnd PWL(0 0 400p 0 500p {vdd} 900p {vdd} 1n 0 1.3n 0 1.5n {vdd} 1.9n {vdd} 2n 0 2.3n 0 2.5n {vdd} 2.9n {vdd} 3n 0 3.3n 0 3.5n {vdd} 3.9n {vdd} 4n 0 4.3n 0 4.5n {vdd} 4.9n {vdd} 5n 0 5.3n 0 5.5n {vdd} 5.9n {vdd} 6n 0 7n 0)
+v3 B gnd PWL(0 0 900p 0 1n {vdd} 1.9n {vdd} 2n 0 2.9n 0 3n {vdd} 3.9n {vdd} 4n 0 4.9n 0 5n {vdd} 5.9n {vdd} 6n 0 6.1n {vdd} 6.5n {vdd} 6.6n 0 7n 0)
+v4 Ci gnd PWL(0 0 1.4n 0 1.5n{vdd} 2.9n{vdd} 3n 0 3.4n 0 3.5n {vdd} 4.9n {vdd} 5n 0 6n 0 6.1n {vdd} 6.6n {vdd} 6.7n 0 7n 0)
+.tran 0 7n
+.END

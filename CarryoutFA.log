@@ -1,0 +1,23 @@
+Circuit: *** SPICE deck for cell CarryoutFA{sch} from library CarryoutFA
+
+V3: Removing PWL point (5.3e-009,0.8)
+Direct Newton iteration for .op point succeeded.
+
+Date: Sat Sep 23 14:42:57 2023
+Total elapsed time: 0.225 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 2691
+traniter = 2679
+tranpoints = 1156
+accept = 1156
+rejected = 0
+matrix size = 101
+fillins = 0
+solver = Normal
+Thread vector: 31.6/17.8[2] 3.6/2.4[2] 1.2/0.9[2] 0.5/0.6[1]  2592/500
+Matrix Compiler1: 11.94 KB object code size  2.1/1.1/[0.7]
+Matrix Compiler2: 12.59 KB object code size  0.9/1.1/[0.6]
+
